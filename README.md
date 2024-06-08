@@ -9,7 +9,6 @@ The design of this website focuses on simplicity, accessibility, and visual appe
 
 - **Professionalism**: The design exudes professionalism, reflecting the high-quality fitness services provided by the brand.
 - **Engagement**: Engaging animations and interactive elements are incorporated to capture users' attention and encourage interaction with the content.
-- **Accessibility**: The layout is designed to be accessible to everyone, regardless of their fitness level or background.
 - **Responsive**: The website is fully responsive, ensuring optimal viewing experience across various devices and screen sizes.
 
 ## Setup Instructions
