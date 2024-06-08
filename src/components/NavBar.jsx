@@ -1,9 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const NavBar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(true);
+    const [isMenuOpen, setIsMenuOpen] = useState(true); 
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMenuOpen(window.innerWidth > 768); 
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        handleResize();
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const toggleMenu = () => {
         setIsMenuOpen(prevState => !prevState);
@@ -122,4 +136,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
