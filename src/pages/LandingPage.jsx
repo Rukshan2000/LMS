@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import NavBar from '../components/NavBar';
-import background from '../assets/background.jpg'; // Import the background image
+import background from '../assets/background.jpg'; 
 import homeImage from '../assets/woman.png';
 import peopleImage from '../assets/people.jpeg';
 
@@ -107,7 +107,6 @@ function Landing() {
           </motion.div>
         </main>
 
-        {/* Bottom section starts here */}
         <div className="grid grid-cols-1 py-12 mt-8 bg-tranceparent lg:grid-cols-2 lg:py-10">
           <div className="grid grid-cols-1 gap-8 p-10 bg-[#FDF2E9] sm:grid-cols-3">
             <motion.div
@@ -172,7 +171,6 @@ function Landing() {
             </div>
           </motion.div>
         </div>
-        {/* Bottom section ends here */}
       </div>
     </motion.div>
   );
