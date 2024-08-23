@@ -44,8 +44,8 @@ const NavBar = () => {
             <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
                 <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
                     <h1 className="text-3xl">
-                        <span className="font-bold text-blue-500">LMS</span>
-                        <span className="font-bold text-black">Portal</span>
+                        <span className="font-bold text-blue-500">E </span>
+                        <span className="font-bold text-black">Siphala</span>
                     </h1>
                 </a>
                 <div className="flex items-center space-x-3 md:order-2 rtl:space-x-reverse">

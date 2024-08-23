@@ -4,18 +4,7 @@ import coursesData from '../jsons/courses.json';
 import { motion } from 'framer-motion';
 import NavBar from '../components/NavBar';
 import backgroundImage from '../assets/bg2.jpg';
-
-// Import images
-import reactImage from '../assets/wad.jpg';
-import javascriptImage from '../assets/wad.jpg';
-// Add more imports as needed
-
-// Map image names to import images
-const imageMap = {
-  'react.jpg': reactImage,
-  'javascript.jpg': javascriptImage,
-  // Add more mappings as needed
-};
+import { imageMap } from '../utils/imageMap'; // Import imageMap from utils
 
 function MyPage() {
   const location = useLocation();
@@ -60,7 +49,7 @@ function MyPage() {
                 transition={{ duration: 0.3, delay: index * 0.1 }}
               >
                 <img
-                  src={imageMap[courseDetails.coverImage]}
+                  src={imageMap[courseDetails.coverImage] || backgroundImage} // Fallback to backgroundImage if coverImage is not found
                   alt={courseDetails.name}
                   className="object-cover w-full h-48 rounded-t-lg"
                 />
