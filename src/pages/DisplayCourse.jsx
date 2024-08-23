@@ -31,7 +31,7 @@ function DisplayCourse() {
 
     const handlePurchaseClick = () => {
         const message = `I would like to purchase course ${courseId}. Please give me more details.`;
-        const whatsappUrl = `https://wa.me/yourphonenumber?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/94779054385?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     };
 
