@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import NavBar from '../components/NavBar';
 import background from '../assets/background.jpg'; 
-import homeImage from '../assets/woman.png';
-import peopleImage from '../assets/people.jpeg';
-
+import homeImage from '../assets/student.png';
 
 function Counter({ finalCount }) {
   const [count, setCount] = useState(0);
@@ -30,7 +28,7 @@ function Counter({ finalCount }) {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      {count}
+      {count}+
     </motion.span>
   );
 }
@@ -55,7 +53,7 @@ function Landing() {
           >
             <motion.img
               src={homeImage}
-              alt="Home"
+              alt="Online Learning"
               className="w-full max-w-sm lg:max-w-md xl:max-w-lg"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -73,10 +71,10 @@ function Landing() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 1 }}
               >
-                Professional<br />
-                <strong>Fitness Workouts</strong><br />
+                Empower Your<br />
+                <strong>Learning Journey</strong><br />
               </motion.span>
-              For Everyone
+              Anytime, Anywhere
             </h1>
             <p className="mt-5 text-lg text-center lg:text-left">
               <motion.span
@@ -84,8 +82,8 @@ function Landing() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 1.5 }}
               >
-                You can start fitness every day through <strong>The Programs</strong> that we make for
-                you. At home, <strong>Without Any Trouble</strong>, just start right now.
+                Access a wide range of courses created by top educators. Learn at your own pace, 
+                from anywhere in the world.
               </motion.span>
             </p>
             <div className="flex flex-wrap justify-center mt-8 space-x-4 lg:justify-start">
@@ -101,76 +99,40 @@ function Landing() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                Learn More
+                Explore Courses
               </motion.button>
             </div>
           </motion.div>
         </main>
 
-        <div className="grid grid-cols-1 py-12 mt-8 bg-tranceparent lg:grid-cols-2 lg:py-10">
-          <div className="grid grid-cols-1 gap-8 p-10 bg-[#FDF2E9] sm:grid-cols-3">
-            <motion.div
-              className="text-left"
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.5 }}
-            >
-              <h2 className="text-2xl font-bold lg:text-3xl">
-                <AnimatePresence>
-                  <Counter finalCount={12} key="experience" />
-                </AnimatePresence>
-                {' '} Years
+        <section className="flex flex-col items-center py-12 lg:py-20">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="text-center">
+              <h2 className="text-4xl font-bold text-blue-500">
+                <Counter finalCount={1000} />
               </h2>
-              <p className="mt-2 text-lg font-bold text-gray-500">Year Experience</p>
-            </motion.div>
-            <motion.div
-              className="text-left"
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.7 }}
-            >
-              <h2 className="text-2xl font-bold lg:text-3xl">
-                <AnimatePresence>
-                  <Counter finalCount={87} key="trainers" />
-                </AnimatePresence>
-              </h2>
-              <p className="mt-2 text-lg font-bold text-gray-500">Expert Trainers</p>
-            </motion.div>
-            <motion.div
-              className="text-left"
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.9 }}
-            >
-              <h2 className="text-2xl font-bold lg:text-3xl">
-                <AnimatePresence>
-                  <Counter finalCount={432} key="classes" />
-                </AnimatePresence>
-              </h2>
-              <p className="mt-2 text-lg font-bold text-gray-500">Classes</p>
-            </motion.div>
-          </div>
-
-          <motion.div
-            className="flex items-center justify-center p-10 bg-gray-100"
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.1 }}
-          >
-            <
-              motion.img
-              src={peopleImage}
-              alt="People"
-              className="h-24 mr-4 rounded-full w-30 lg "
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            />
-            <div>
-              <h2 className="text-2xl font-bold lg:text-3xl">187K</h2>
-              <p className="mt-2 text-lg font-bold text-gray-500">Active Customers In The World</p>
+              <p className="mt-2 text-lg">Courses</p>
             </div>
-          </motion.div>
-        </div>
+            <div className="text-center">
+              <h2 className="text-4xl font-bold text-blue-500">
+                <Counter finalCount={300} />
+              </h2>
+              <p className="mt-2 text-lg">Expert Instructors</p>
+            </div>
+            <div className="text-center">
+              <h2 className="text-4xl font-bold text-blue-500">
+                <Counter finalCount={500000} />
+              </h2>
+              <p className="mt-2 text-lg">Students Enrolled</p>
+            </div>
+            <div className="text-center">
+              <h2 className="text-4xl font-bold text-blue-500">
+                <Counter finalCount={200} />
+              </h2>
+              <p className="mt-2 text-lg">Partners Worldwide</p>
+            </div>
+          </div>
+        </section>
       </div>
     </motion.div>
   );

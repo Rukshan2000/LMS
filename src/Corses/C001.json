@@ -1,0 +1,100 @@
+{
+    "courseName": "Basic Web Development",
+    "description": "Learn the fundamentals of web development, including HTML, CSS, and JavaScript.",
+    "instructor": {
+        "name": "Alex Taylor",
+        "contact": "https://wa.me/94779054385"
+    },
+    "videoData": [
+        {
+            "videoLink": "https://www.youtube.com/embed/CP1aLTqHnOE",
+            "lectureMaterials": [
+                "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct",
+                "https://drive.google.com/uc?export=download&id=2sRGOITKXz3rNqPLVZ0Be3fEJfD2kb3C"
+            ]
+        },
+        {
+            "videoLink": "https://www.youtube.com/embed/CP1aLTqHnOE",
+            "lectureMaterials": [
+                "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct"
+            ]
+        },
+        {
+            "videoLink": "https://www.youtube.com/embed/t7rm6kmtjLY",
+            "lectureMaterials": [
+                "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct"
+            ]
+        },
+        {
+            "videoLink": "https://www.youtube.com/embed/bON4MXOFak8",
+            "lectureMaterials": [
+                "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct"
+            ]
+        },
+        {
+            "videoLink": "https://www.youtube.com/embed/xByi4Z0o5OA",
+            "lectureMaterials": [
+                "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct"
+            ]
+        },
+        {
+            "videoLink": "https://www.youtube.com/embed/omoyLZKkKGI",
+            "lectureMaterials": [
+                "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct"
+            ]
+        },
+        {
+            "videoLink": "https://www.youtube.com/embed/FF3G-XdKjEE",
+            "lectureMaterials": [
+                "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct"
+            ]
+        },
+        {
+            "videoLink": "https://www.youtube.com/embed/q0dNSM8axDc",
+            "lectureMaterials": [
+                "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct"
+            ]
+        },
+        {
+            "videoLink": "https://www.youtube.com/embed/HLSnJRQqPX0",
+            "lectureMaterials": [
+                "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct"
+            ]
+        },
+        {
+            "videoLink": "https://www.youtube.com/embed/bJlzsQttytM",
+            "lectureMaterials": [
+                "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct"
+            ]
+        },
+        {
+            "videoLink": "https://www.youtube.com/embed/IMpZDdiaFMI",
+            "lectureMaterials": [
+                "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct"
+            ]
+        },
+        {
+            "videoLink": "https://www.youtube.com/embed/YiEQFWtecrQ",
+            "lectureMaterials": [
+                "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct"
+            ]
+        }
+    ],
+    "videoDescriptions": [
+        "Description for video 1.",
+        "Description for video 2.",
+        "Description for video 3.",
+        "Description for video 4.",
+        "Description for video 5.",
+        "Description for video 6.",
+        "Description for video 7.",
+        "Description for video 8.",
+        "Description for video 9.",
+        "Description for video 10.",
+        "Description for video 11.",
+        "Description for video 12.",
+        "Description for video 13.",
+        "Description for video 14.",
+        "Description for video 15."
+    ]
+}

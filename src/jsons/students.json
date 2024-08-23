@@ -1,0 +1,19 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "password": "1",
+      "purchasedCourses": [
+        { "courseId": "C001", "expiryDate": "2024-12-31" },
+        { "courseId": "C002", "expiryDate": "2024-11-30" }
+      ]
+    },
+    {
+      "id": "S002",
+      "password": "pass456",
+      "purchasedCourses": [
+        { "courseId": "C003", "expiryDate": "2024-10-01" }
+      ]
+    }
+  ]
+}
