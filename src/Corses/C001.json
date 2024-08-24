@@ -7,6 +7,8 @@
     },
     "videoData": [
         {
+            "title": "Introduction to Web Development",
+            "description": "An introduction to the basics of web development, covering HTML, CSS, and JavaScript.",
             "videoLink": "https://www.youtube.com/embed/CP1aLTqHnOE",
             "lectureMaterials": [
                 "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct",
@@ -14,87 +16,92 @@
             ]
         },
         {
+            "title": "HTML Basics",
+            "description": "Learn the fundamentals of HTML, the backbone of web content.",
             "videoLink": "https://www.youtube.com/embed/CP1aLTqHnOE",
             "lectureMaterials": [
                 "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct"
             ]
         },
         {
+            "title": "CSS Basics",
+            "description": "An overview of CSS, the language used to style HTML content.",
             "videoLink": "https://www.youtube.com/embed/t7rm6kmtjLY",
             "lectureMaterials": [
                 "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct"
             ]
         },
         {
+            "title": "JavaScript Basics",
+            "description": "Learn the fundamentals of JavaScript, the language of interactivity on the web.",
             "videoLink": "https://www.youtube.com/embed/bON4MXOFak8",
             "lectureMaterials": [
                 "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct"
             ]
         },
         {
+            "title": "Advanced HTML & CSS",
+            "description": "Deep dive into more advanced HTML and CSS concepts and techniques.",
             "videoLink": "https://www.youtube.com/embed/xByi4Z0o5OA",
             "lectureMaterials": [
                 "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct"
             ]
         },
         {
+            "title": "JavaScript Advanced Concepts",
+            "description": "Explore advanced JavaScript concepts and techniques.",
             "videoLink": "https://www.youtube.com/embed/omoyLZKkKGI",
             "lectureMaterials": [
                 "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct"
             ]
         },
         {
+            "title": "Web Development Tools",
+            "description": "Overview of essential tools used in web development.",
             "videoLink": "https://www.youtube.com/embed/FF3G-XdKjEE",
             "lectureMaterials": [
                 "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct"
             ]
         },
         {
+            "title": "Project: Building a Simple Website",
+            "description": "A hands-on project where we build a simple website from scratch.",
             "videoLink": "https://www.youtube.com/embed/q0dNSM8axDc",
             "lectureMaterials": [
                 "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct"
             ]
         },
         {
+            "title": "Responsive Design",
+            "description": "Learn the principles of responsive design to make your website look great on all devices.",
             "videoLink": "https://www.youtube.com/embed/HLSnJRQqPX0",
             "lectureMaterials": [
                 "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct"
             ]
         },
         {
+            "title": "Deploying Your Website",
+            "description": "A guide on how to deploy your website to the internet.",
             "videoLink": "https://www.youtube.com/embed/bJlzsQttytM",
             "lectureMaterials": [
                 "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct"
             ]
         },
         {
+            "title": "Maintaining a Website",
+            "description": "Best practices for maintaining and updating your website post-launch.",
             "videoLink": "https://www.youtube.com/embed/IMpZDdiaFMI",
             "lectureMaterials": [
                 "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct"
             ]
         },
         {
+            "title": "Course Summary & Next Steps",
+            "description": "Wrapping up the course and discussing next steps for further learning.",
             "videoLink": "https://www.youtube.com/embed/YiEQFWtecrQ",
             "lectureMaterials": [
                 "https://drive.google.com/uc?export=download&id=1rROILn2ekw_rIG6tolKNtMtBQMHB7-Ct"
             ]
         }
-    ],
-    "videoDescriptions": [
-        "Description for video 1.",
-        "Description for video 2.",
-        "Description for video 3.",
-        "Description for video 4.",
-        "Description for video 5.",
-        "Description for video 6.",
-        "Description for video 7.",
-        "Description for video 8.",
-        "Description for video 9.",
-        "Description for video 10.",
-        "Description for video 11.",
-        "Description for video 12.",
-        "Description for video 13.",
-        "Description for video 14.",
-        "Description for video 15."
     ]
 }

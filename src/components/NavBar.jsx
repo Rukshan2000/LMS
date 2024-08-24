@@ -89,7 +89,7 @@ const NavBar = () => {
                     animate={isMenuOpen ? 'visible' : 'hidden'}
                 >
                     <ul className="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:p-0 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
-                        {['Home', 'Courses', 'About', 'Blog'].map((item, index) => (
+                        {['Home', 'Courses', 'About', 'Teacher'].map((item, index) => (
                             <li key={index}>
                                 <Link
                                     to={`/${item.toLowerCase()}`} // Ensure this matches your routes
