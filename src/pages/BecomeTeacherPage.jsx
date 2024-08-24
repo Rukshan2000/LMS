@@ -17,6 +17,7 @@ const BecomeTeacherPage = () => {
         backgroundPosition: 'center',
         minHeight: '100vh',
         color: 'black',
+        paddingBottom: '100px', // Add padding at the bottom
       }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

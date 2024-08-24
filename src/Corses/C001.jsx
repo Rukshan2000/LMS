@@ -1,19 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 import background from '../assets/background.jpg';
 import NavBar from '../components/NavBar';
 import courseData from './C001.json';
 
 function C001() {
+    const location = useLocation();
+    const { studentId } = location.state || {};
+    
     const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
     const [data, setData] = useState(courseData);
-
+    
     useEffect(() => {
         // Optionally fetch data if not importing directly
         // fetch('/path/to/C001.json')
         //     .then(response => response.json())
         //     .then(data => setData(data));
     }, []);
+    
+    if (!studentId) {
+        return (
+            <motion.div
+                className="flex items-center justify-center min-h-screen bg-gray-100"
+                style={{ backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+            >
+                <div className="p-6 bg-white rounded-lg shadow-lg">
+                    <h1 className="text-3xl font-bold text-gray-900">No Student Logged In</h1>
+                    <p className="mt-4 text-lg text-gray-600">Please log in to access this course content.</p>
+                </div>
+            </motion.div>
+        );
+    }
 
     const handleNext = () => {
         setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % data.videoData.length);
@@ -27,7 +48,7 @@ function C001() {
         <motion.div
             className="font-poppins"
             style={{
-                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${background})`,
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(${background})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 minHeight: '100vh',
@@ -39,7 +60,6 @@ function C001() {
         >
             <NavBar />
             <div className="container flex flex-col gap-8 py-12 mx-auto lg:flex-row lg:px-20">
-
                 {/* Sidebar Section */}
                 <aside className="p-6 text-gray-900 bg-white rounded-lg shadow-xl lg:w-1/4">
                     <h3 className="mb-4 text-2xl font-bold text-center">Course Content</h3>

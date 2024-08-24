@@ -5,7 +5,8 @@ import studentsData from '../jsons/students.json';
 import teachersData from '../jsons/teachers.json';
 import NavBar from '../components/NavBar';
 import { motion } from 'framer-motion';
-import { imageMap } from '../utils/imageMap'; // Import the imageMap
+import background from '../assets/background.jpg'; 
+import { imageMap } from '../utils/imageMap';
 
 function TeacherPage() {
   const location = useLocation();
@@ -38,7 +39,7 @@ function TeacherPage() {
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    const courseDetails = courses.find(course => course.courseId === selectedCourseId);
+    const courseDetails = coursesData.courses.find(course => course.courseId === selectedCourseId);
 
     const totalIncomeBeforeFee = filteredStudents.reduce((acc, student) => {
       const course = student.purchasedCourses.find(course => course.courseId === selectedCourseId);
@@ -52,7 +53,8 @@ function TeacherPage() {
       setError('Request amount cannot exceed available balance.');
     } else {
       setError('');
-      // Handle successful cash-out request here
+      const message = `Cash-out request: Please deposit LKR ${requestAmount} to my account.`;
+      window.open(`https://wa.me/94779054385?text=${encodeURIComponent(message)}`, '_blank');
       alert(`Cash-out request for LKR ${requestAmount} submitted successfully.`);
       setRequestAmount('');
       handleClosePopup();
@@ -77,35 +79,54 @@ function TeacherPage() {
 
   const courseDetails = courses.find(course => course.courseId === selectedCourseId);
 
-  // Calculate total income before service fee
   const totalIncomeBeforeFee = filteredStudents.reduce((acc, student) => {
     const course = student.purchasedCourses.find(course => course.courseId === selectedCourseId);
     return acc + (course ? parseFloat(courseDetails.price.replace('LKR ', '')) : 0);
   }, 0);
 
-  // Deduct LKR 500 per student
   const serviceFeePerStudent = 500;
   const totalServiceFee = filteredStudents.length * serviceFeePerStudent;
   const totalIncomeAfterFee = totalIncomeBeforeFee - totalServiceFee;
 
-  // Calculate total payments made
   const totalPaymentsMade = teacher.coursesTaught
     .find(course => course.courseId === selectedCourseId)
     ?.paymentHistory.reduce((acc, payment) => acc + payment.amountPaid, 0) || 0;
 
   const availableBalance = totalIncomeAfterFee - totalPaymentsMade;
 
+  const totalEarningsBeforeFee = studentsData.students.reduce((acc, student) => {
+    return acc + student.purchasedCourses.reduce((subAcc, purchasedCourse) => {
+      const course = coursesData.courses.find(course => course.courseId === purchasedCourse.courseId);
+      return subAcc + (course ? parseFloat(course.price.replace('LKR ', '')) : 0);
+    }, 0);
+  }, 0);
+
+  const totalServiceFeeAllCourses = studentsData.students.length * serviceFeePerStudent;
+  const totalEarningsAfterFee = totalEarningsBeforeFee - totalServiceFeeAllCourses;
+
   return (
     <motion.div
-      className="min-h-screen px-4 py-12 bg-gray-100 font-poppins"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <NavBar />
+    className="min-h-screen px-4 py-12 bg-gray-100 font-poppins"
+    style={{
+      backgroundImage: `url(${background})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+    }}
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+  >
+    <NavBar />
 
-      <div className="container mx-auto">
+      <div className="container px-4 mx-auto">
         <h2 className="mb-8 text-3xl font-bold text-center">Welcome, {teacher.name}</h2>
+
+        {/* Total Earnings */}
+        <div className="p-4 mb-6 bg-white rounded-lg shadow-lg">
+          <h3 className="text-2xl font-semibold">Total Earnings</h3>
+          <p className="text-lg">Total Earnings (After Service Fee): LKR {totalEarningsAfterFee.toFixed(2)}</p>
+        </div>
 
         <div className="mb-6">
           <label htmlFor="courseFilter" className="block mb-2 text-lg font-semibold text-gray-700">Filter by Course</label>
@@ -130,7 +151,7 @@ function TeacherPage() {
             {courseDetails && (
               <div className="p-4 mb-8 bg-white rounded-lg shadow-lg">
                 <img
-                  src={imageMap[courseDetails.coverImage] || '/assets/default-course.jpg'} // Use imageMap to get the image
+                  src={imageMap[courseDetails.coverImage] || '/assets/default-course.jpg'}
                   alt={courseDetails.name}
                   className="object-cover w-full h-40 mb-4 rounded"
                 />
@@ -144,7 +165,7 @@ function TeacherPage() {
 
             <h3 className="mb-4 text-2xl font-semibold">Students Enrolled</h3>
             {filteredStudents.length > 0 ? (
-              <table className="min-w-full bg-white border border-gray-300 rounded-lg shadow-md">
+              <table className="min-w-full mb-8 bg-white border border-gray-300 rounded-lg shadow-md">
                 <thead>
                   <tr className="border-b border-gray-300">
                     <th className="px-4 py-2 text-left">Student ID</th>
@@ -155,7 +176,7 @@ function TeacherPage() {
                 </thead>
                 <tbody>
                   {filteredStudents.map(student => (
-                    <tr key={student.id} className="border-b border-gray-200">
+                    <tr key={student.id} className="border-b border-gray-200 hover:bg-gray-100">
                       <td className="px-4 py-2">{student.id}</td>
                       <td className="px-4 py-2">{student.name}</td>
                       <td className="px-4 py-2">{student.email}</td>
@@ -172,60 +193,64 @@ function TeacherPage() {
               <p className="text-gray-700">No students enrolled in this course.</p>
             )}
 
-            <div className="my-8">
-              <h3 className="text-2xl font-semibold">Available Amount for Cash-Out</h3>
-              <p className="text-lg">
-                Total Income (Before Service Fee): LKR {totalIncomeBeforeFee}
-              </p>
-              <p className="text-lg">
-                Service Fee (LKR 500 per student): LKR {totalServiceFee}
-              </p>
-              <p className="text-lg">
-                Total Income (After Service Fee): LKR {totalIncomeAfterFee}
-              </p>
-              <p className="text-lg">
-                Total Payments Made: LKR {totalPaymentsMade}
-              </p>
-              <p className="text-lg">
-                Available Balance for Cash-Out: LKR {availableBalance}
-              </p>
-            </div>
+            <h3 className="mb-4 text-2xl font-semibold">Payment History</h3>
+            {teacher.coursesTaught.find(course => course.courseId === selectedCourseId)?.paymentHistory.length > 0 ? (
+              <table className="min-w-full mb-8 bg-white border border-gray-300 rounded-lg shadow-md">
+                <thead>
+                  <tr className="border-b border-gray-300">
+                    <th className="px-4 py-2 text-left">Date</th>
+                    <th className="px-4 py-2 text-left">Amount Paid</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {teacher.coursesTaught.find(course => course.courseId === selectedCourseId)?.paymentHistory.map((payment, index) => (
+                    <tr key={index} className="border-b border-gray-200 hover:bg-gray-100">
+                      <td className="px-4 py-2">{payment.datePaid}</td>
+                      <td className="px-4 py-2">{payment.amountPaid}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            ) : (
+              <p className="text-gray-700">No payment history available.</p>
+            )}
 
             <button
               onClick={handleOpenPopup}
-              className="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600"
+              className="px-4 py-2 mt-4 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
             >
-              Request Cash-Out
+              Request Cash-out
             </button>
 
             {isPopupOpen && (
-              <div className="fixed inset-0 z-50 flex items-center justify-center">
-                <div className="p-6 bg-white rounded-lg shadow-lg w-96">
-                  <h3 className="mb-4 text-xl font-semibold">Request Cash-Out</h3>
+              <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+                <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-lg">
+                  <h3 className="mb-4 text-xl font-semibold">Request Cash-out</h3>
                   <form onSubmit={handleFormSubmit}>
-                    <label htmlFor="amount" className="block mb-2 text-lg font-semibold">Amount</label>
-                    <input
-                      type="number"
-                      id="amount"
-                      value={requestAmount}
-                      onChange={handleRequestAmountChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm"
-                      min="0"
-                    />
-                    {error && <p className="mt-2 text-red-500">{error}</p>}
-                    <div className="mt-4">
-                      <button
-                        type="submit"
-                        className="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600"
-                      >
-                        Submit Request
-                      </button>
+                    <div className="mb-4">
+                      <label htmlFor="requestAmount" className="block mb-2 text-lg font-semibold">Amount (LKR)</label>
+                      <input
+                        type="number"
+                        id="requestAmount"
+                        value={requestAmount}
+                        onChange={handleRequestAmountChange}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      />
+                    </div>
+                    {error && <p className="mb-4 text-red-500">{error}</p>}
+                    <div className="flex justify-end">
                       <button
                         type="button"
                         onClick={handleClosePopup}
-                        className="px-4 py-2 ml-4 text-gray-700 bg-gray-300 rounded-lg hover:bg-gray-400"
+                        className="px-4 py-2 mr-4 text-white bg-gray-500 rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50"
                       >
                         Cancel
+                      </button>
+                      <button
+                        type="submit"
+                        className="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                      >
+                        Submit Request
                       </button>
                     </div>
                   </form>

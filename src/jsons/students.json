@@ -96,7 +96,10 @@
       "email": "sophia.harris@gmail.com",
       "password": "sophia654",
       "purchasedCourses": [
-        { "courseId": "C001", "expiryDate": "2024-11-01" }
+        { "courseId": "C001", "expiryDate": "2024-11-01" },
+        { "courseId": "C002", "expiryDate": "2024-11-01" },
+        { "courseId": "C003", "expiryDate": "2024-11-01" }
+
       ]
     },
     {

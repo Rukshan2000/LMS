@@ -4,14 +4,12 @@ import coursesData from '../jsons/courses.json';
 import { motion } from 'framer-motion';
 import NavBar from '../components/NavBar';
 import backgroundImage from '../assets/bg2.jpg';
-import { imageMap } from '../utils/imageMap'; // Import imageMap from utils
+import { imageMap } from '../utils/imageMap';
 
 function MyPage() {
   const location = useLocation();
   const navigate = useNavigate();
   const { purchasedCourses, student } = location.state || {};
-
-  console.log('Location State:', location.state); // Check if student data is here
 
   if (!purchasedCourses || purchasedCourses.length === 0) {
     return (
@@ -20,6 +18,10 @@ function MyPage() {
       </div>
     );
   }
+
+  const handleViewDetails = (courseId) => {
+    navigate(`/${courseId}`, { state: { studentId: student.id } });
+  };
 
   return (
     <motion.div
@@ -42,10 +44,6 @@ function MyPage() {
 
             if (!courseDetails) return null;
 
-            const handleViewDetails = () => {
-              navigate(`/${courseDetails.courseId}`);
-            };
-
             return (
               <motion.div
                 key={index}
@@ -55,7 +53,7 @@ function MyPage() {
                 transition={{ duration: 0.3, delay: index * 0.1 }}
               >
                 <img
-                  src={imageMap[courseDetails.coverImage] || backgroundImage} // Fallback to backgroundImage if coverImage is not found
+                  src={imageMap[courseDetails.coverImage] || backgroundImage}
                   alt={courseDetails.name}
                   className="object-cover w-full h-48 rounded-t-lg"
                 />
@@ -63,7 +61,7 @@ function MyPage() {
                 <p className="mb-2 text-gray-600">{courseDetails.description}</p>
                 <p className="text-gray-500">Duration: {courseDetails.duration}</p>
                 <motion.button
-                  onClick={handleViewDetails}
+                  onClick={() => handleViewDetails(courseDetails.courseId)}
                   className="px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded-lg hover:bg-blue-700"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
