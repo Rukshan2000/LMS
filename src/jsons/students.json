@@ -1,18 +1,183 @@
 {
   "students": [
     {
-      "id": "1",
-      "password": "1",
+      "id": "S001",
+      "name": "John Doe",
+      "email": "john.doe@gmail.com",
+      "password": "password123",
       "purchasedCourses": [
-        { "courseId": "C001", "expiryDate": "2024-12-31" },
-        { "courseId": "C002", "expiryDate": "2024-11-30" }
+        { "courseId": "C001", "expiryDate": "2024-12-31" }
       ]
     },
     {
       "id": "S002",
+      "name": "Jane Smith",
+      "email": "jane.smith@gmail.com",
       "password": "pass456",
       "purchasedCourses": [
-        { "courseId": "C003", "expiryDate": "2024-10-01" }
+        { "courseId": "C001", "expiryDate": "2024-10-01" }
+      ]
+    },
+    {
+      "id": "S003",
+      "name": "Emily Johnson",
+      "email": "emily.johnson@gmail.com",
+      "password": "emily789",
+      "purchasedCourses": [
+        { "courseId": "C001", "expiryDate": "2024-09-15" }
+      ]
+    },
+    {
+      "id": "S004",
+      "name": "Michael Brown",
+      "email": "michael.brown@gmail.com",
+      "password": "michael2024",
+      "purchasedCourses": [
+        { "courseId": "C001", "expiryDate": "2024-11-05" }
+      ]
+    },
+    {
+      "id": "S005",
+      "name": "Sarah Davis",
+      "email": "sarah.davis@gmail.com",
+      "password": "sarah321",
+      "purchasedCourses": [
+        { "courseId": "C001", "expiryDate": "2024-08-20" }
+      ]
+    },
+    {
+      "id": "S006",
+      "name": "David Wilson",
+      "email": "david.wilson@gmail.com",
+      "password": "david654",
+      "purchasedCourses": [
+        { "courseId": "C001", "expiryDate": "2024-12-25" }
+      ]
+    },
+    {
+      "id": "S007",
+      "name": "Laura Martinez",
+      "email": "laura.martinez@gmail.com",
+      "password": "laura987",
+      "purchasedCourses": [
+        { "courseId": "C001", "expiryDate": "2024-11-15" }
+      ]
+    },
+    {
+      "id": "S008",
+      "name": "Chris Taylor",
+      "email": "chris.taylor@gmail.com",
+      "password": "chris888",
+      "purchasedCourses": [
+        { "courseId": "C001", "expiryDate": "2024-10-10" }
+      ]
+    },
+    {
+      "id": "S009",
+      "name": "Olivia Anderson",
+      "email": "olivia.anderson@gmail.com",
+      "password": "olivia456",
+      "purchasedCourses": [
+        { "courseId": "C001", "expiryDate": "2024-09-30" }
+      ]
+    },
+    {
+      "id": "S010",
+      "name": "Daniel Thomas",
+      "email": "daniel.thomas@gmail.com",
+      "password": "daniel123",
+      "purchasedCourses": [
+        { "courseId": "C001", "expiryDate": "2024-12-15" }
+      ]
+    },
+    {
+      "id": "S011",
+      "name": "Sophia Harris",
+      "email": "sophia.harris@gmail.com",
+      "password": "sophia654",
+      "purchasedCourses": [
+        { "courseId": "C001", "expiryDate": "2024-11-01" }
+      ]
+    },
+    {
+      "id": "S012",
+      "name": "James Clark",
+      "email": "james.clark@gmail.com",
+      "password": "james789",
+      "purchasedCourses": [
+        { "courseId": "C001", "expiryDate": "2024-12-20" }
+      ]
+    },
+    {
+      "id": "S013",
+      "name": "Mia Lewis",
+      "email": "mia.lewis@gmail.com",
+      "password": "mia321",
+      "purchasedCourses": [
+        { "courseId": "C001", "expiryDate": "2024-10-30" }
+      ]
+    },
+    {
+      "id": "S014",
+      "name": "Ethan Walker",
+      "email": "ethan.walker@gmail.com",
+      "password": "ethan987",
+      "purchasedCourses": [
+        { "courseId": "C001", "expiryDate": "2024-08-15" }
+      ]
+    },
+    {
+      "id": "S015",
+      "name": "Ava Young",
+      "email": "ava.young@gmail.com",
+      "password": "ava654",
+      "purchasedCourses": [
+        { "courseId": "C001", "expiryDate": "2024-12-05" }
+      ]
+    },
+    {
+      "id": "S016",
+      "name": "Benjamin King",
+      "email": "benjamin.king@gmail.com",
+      "password": "benjamin2024",
+      "purchasedCourses": [
+        { "courseId": "C001", "expiryDate": "2024-09-25" }
+      ]
+    },
+    {
+      "id": "S017",
+      "name": "Isabella Scott",
+      "email": "isabella.scott@gmail.com",
+      "password": "isabella789",
+      "purchasedCourses": [
+        { "courseId": "C001", "expiryDate": "2024-10-20" }
+      ]
+    },
+    {
+      "id": "S018",
+      "name": "Matthew Green",
+      "email": "matthew.green@gmail.com",
+      "password": "matthew123",
+      "purchasedCourses": [
+        { "courseId": "C001", "expiryDate": "2024-11-10" }
+      ]
+    },
+    {
+      "id": "S019",
+      "name": "Charlotte Adams",
+      "email": "charlotte.adams@gmail.com",
+      "password": "charlotte456",
+      "purchasedCourses": [
+        { "courseId": "C001", "expiryDate": "2024-12-01" }
+      ]
+    },
+    {
+      "id": "S020",
+      "name": "Lucas Baker",
+      "email": "lucas.baker@gmail.com",
+      "password": "lucas789",
+      "purchasedCourses": [
+        { "courseId": "C001", "expiryDate": "2024-10-05" }
       ]
     }
   ]

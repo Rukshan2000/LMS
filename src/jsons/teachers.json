@@ -1,0 +1,70 @@
+{
+  "teachers": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "password": "1",
+      "contactNumber": "+1-555-1234",
+      "bankAccountNumber": "1234567890",
+      "coursesTaught": [
+        {
+          "courseId": "C001",
+          "paymentHistory": [
+            {"courseId": "C001","datePaid": "2024-08-20", "amountPaid": 1000}
+          ]
+        },
+        {
+          "courseId": "C002",
+          "paymentHistory": [
+            {"courseId": "C002","datePaid": "2024-08-20", "amountPaid": 1000}
+
+          ]
+        }
+      ]
+    },
+    {
+      "id": "T002",
+      "name": "Jane Smith",
+      "password": "mypassword",
+      "contactNumber": "+1-555-5678",
+      "bankAccountNumber": "9876543210",
+      "coursesTaught": [
+        {
+          "courseId": "C003",
+          "paymentHistory": [
+            {"courseId": "C003","datePaid": "2024-08-20", "amountPaid": 1000}
+
+          ]
+        },
+        {
+          "courseId": "C004",
+          "paymentHistory": [
+            {"courseId": "C004","datePaid": "2024-08-20", "amountPaid": 1000}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "T003",
+      "name": "Emily Johnson",
+      "password": "securepass",
+      "contactNumber": "+1-555-9012",
+      "bankAccountNumber": "4567890123",
+      "coursesTaught": [
+        {
+          "courseId": "C005",
+          "paymentHistory": [
+            {"courseId": "C005","datePaid": "2024-08-20", "amountPaid": 1000}
+
+          ]
+        },
+        {
+          "courseId": "C006",
+          "paymentHistory": [
+            {"courseId": "C006","datePaid": "2024-08-20", "amountPaid": 1000}
+          ]
+        }
+      ]
+    }
+  ]
+}

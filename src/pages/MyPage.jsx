@@ -9,7 +9,9 @@ import { imageMap } from '../utils/imageMap'; // Import imageMap from utils
 function MyPage() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { purchasedCourses } = location.state || {};
+  const { purchasedCourses, student } = location.state || {};
+
+  console.log('Location State:', location.state); // Check if student data is here
 
   if (!purchasedCourses || purchasedCourses.length === 0) {
     return (
@@ -29,6 +31,10 @@ function MyPage() {
     >
       <NavBar />
       <div className="container px-4 mx-auto">
+        <div className="mb-8 text-center text-white">
+          <h2 className="text-3xl font-bold">Welcome, {student?.name || 'Guest'}!</h2>
+          <p className="text-xl">{student?.email || 'No email provided'}</p>
+        </div>
         <h2 className="mb-8 text-3xl font-bold text-center text-white">Your Purchased Courses</h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {purchasedCourses.map((course, index) => {

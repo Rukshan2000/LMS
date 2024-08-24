@@ -9,6 +9,8 @@ import BecomeTeacherPage from './pages/BecomeTeacherPage';
 import Login from './pages/Login';
 import MyPage from './pages/MyPage.jsx';
 import DisplayCourse from './pages/DisplayCourse.jsx';
+import TeacherLogin from './pages/TeacherLogin.jsx';
+import TeacherPage from './pages/TeacherPage.jsx';
 
 
 //courses
@@ -28,6 +30,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/course-details/:courseId" element={<DisplayCourse />} />
+        <Route path="/teacher-login" element={<TeacherLogin />} />
+        <Route path="/teacherpage" element={<TeacherPage />} />
 
 
 

@@ -1,35 +1,25 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import studentsData from '../jsons/students.json';
-import coursesData from '../jsons/courses.json';
+import teachersData from '../jsons/teachers.json'; // Import teacher data
 import NavBar from '../components/NavBar'; // Import NavBar component
 import backgroundImage from '../assets/bg2.jpg';
 import { motion } from 'framer-motion'; // Import motion from framer-motion
 
-function Login() {
-  const [studentId, setStudentId] = useState('');
+function TeacherLogin() {
+  const [teacherId, setTeacherId] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    const student = studentsData.students.find(s => s.id === studentId);
+    const teacher = teachersData.teachers.find(t => t.id === teacherId);
 
-    if (student && student.password === password) {
-      const validCourses = student.purchasedCourses.filter(course => {
-        const expiryDate = new Date(course.expiryDate);
-        return expiryDate >= new Date();  // Filter out expired courses
-      });
-
-      const coursesWithDetails = validCourses.map(purchasedCourse => {
-        return coursesData.courses.find(course => course.courseId === purchasedCourse.courseId);
-      });
-
-      // Navigate to MyPage with both purchasedCourses and student details
-      navigate('/mypage', { state: { purchasedCourses: coursesWithDetails, student } });
+    if (teacher && teacher.password === password) {
+      // Navigate to TeacherPage with teacherId
+      navigate('/teacherpage', { state: { teacherId } });
       setError('');
     } else {
-      setError('Invalid student ID or password.');
+      setError('Invalid teacher ID or password.');
     }
   };
 
@@ -45,16 +35,16 @@ function Login() {
       
       <div className="flex flex-col items-center justify-center flex-grow py-12 bg-gray-900 bg-opacity-40">
         <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg">
-          <h2 className="mb-6 text-3xl font-extrabold text-center text-gray-900">Welcome Back, Student!</h2>
+          <h2 className="mb-6 text-3xl font-extrabold text-center text-gray-900">Welcome Back, Teacher!</h2>
           <p className="mb-6 text-center text-gray-700">
-            Embark on a new learning journey with us. Log in to access your courses and continue your path to success.
+            Log in to manage your courses and track your students' progress.
           </p>
           <div className="mb-4">
             <input
               type="text"
-              placeholder="Student ID"
-              value={studentId}
-              onChange={(e) => setStudentId(e.target.value)}
+              placeholder="Teacher ID"
+              value={teacherId}
+              onChange={(e) => setTeacherId(e.target.value)}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
@@ -80,4 +70,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default TeacherLogin;

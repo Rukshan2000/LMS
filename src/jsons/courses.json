@@ -6,7 +6,7 @@
       "description": "Learn the fundamentals of web development, including HTML, CSS, and JavaScript.",
       "instructor": "Alex Taylor",
       "duration": "6 weeks",
-      "price": "$199",
+      "price": "LKR 5000",
       "content": [
         "Introduction to HTML",
         "CSS Basics",
@@ -21,7 +21,7 @@
       "description": "Deep dive into advanced JavaScript topics such as closures and prototypes.",
       "instructor": "John Smith",
       "duration": "6 weeks",
-      "price": "$299",
+      "price": "LKR 10000",
       "content": [
         "Closures and Scope",
         "Prototypes and Inheritance",
@@ -36,7 +36,7 @@
       "description": "Build both frontend and backend applications with modern technologies.",
       "instructor": "Emily Johnson",
       "duration": "12 weeks",
-      "price": "$499",
+      "price": "LKR 10000",
       "content": [
         "Frontend Technologies (HTML, CSS, JavaScript)",
         "Backend Development (Node.js, Express)",
@@ -51,7 +51,7 @@
       "description": "Explore data analysis and visualization using Python and its libraries.",
       "instructor": "Michael Brown",
       "duration": "8 weeks",
-      "price": "$399",
+      "price": "LKR 9000",
       "content": [
         "Introduction to Python for Data Science",
         "Data Analysis with Pandas",
@@ -66,7 +66,7 @@
       "description": "Understand the principles of UX/UI design and how to apply them in real-world projects.",
       "instructor": "Sarah Davis",
       "duration": "5 weeks",
-      "price": "$249",
+      "price": "LKR 6000",
       "content": [
         "Principles of UX Design",
         "Wireframing and Prototyping",
@@ -81,7 +81,7 @@
       "description": "Learn the basics of React, including components, state, and props.",
       "instructor": "Jane Doe",
       "duration": "4 weeks",
-      "price": "$199",
+      "price": "LKR 7500",
       "content": [
         "Introduction to React",
         "Components and Props",
